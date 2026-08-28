@@ -142,24 +142,98 @@ footer ol{margin:14px 0 0;padding-left:20px}
 footer li{margin-bottom:9px;max-width:78ch}
 footer b{color:var(--ink-2);font-weight:650}
 
+/* horizontally scrollable wrapper for wide tables; edge shadows appear only when there is more to see */
+.scroller{
+  overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  background:
+    linear-gradient(to right,var(--paper) 40%,rgba(251,250,247,0)) left center/26px 100% no-repeat local,
+    linear-gradient(to left,var(--paper) 40%,rgba(251,250,247,0)) right center/26px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%,rgba(22,19,15,.13),rgba(22,19,15,0)) left center/9px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%,rgba(22,19,15,.13),rgba(22,19,15,0)) right center/9px 100% no-repeat scroll;
+}
+.scroller table.data{min-width:640px}
+.scroller table.matrix{min-width:420px}
+html,body{max-width:100%;overflow-x:hidden}
+footer li,footer{overflow-wrap:anywhere}
+
 @media (max-width:1000px){
   .slopes{grid-template-columns:repeat(2,1fr);gap:30px}
   .tg{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ---------- tablet ---------- */
+@media (max-width:820px){
+  .wrap{width:calc(100vw - 36px)}
+  section{padding:44px 0}
+  .figures{grid-template-columns:1fr}
+  .fig{padding:20px 0}
+  .fig .cap{max-width:none}
+}
+
+/* ---------- phone ---------- */
 @media (max-width:680px){
   .wrap{width:calc(100vw - 32px)}
-  header.masthead{padding:40px 0 26px}
-  section{padding:38px 0}
+  header.masthead{padding:36px 0 24px}
+  section{padding:34px 0}
+  h1{font-size:clamp(31px,8.6vw,40px)}
+  .standfirst{font-size:17px}
+  .byline{gap:6px 18px;font-size:12px}
+  .dl{font-size:14px;padding-bottom:4px}
+
   .figures{grid-template-columns:1fr}
-  .slopes{grid-template-columns:1fr}
+  .slopes{grid-template-columns:1fr;gap:26px}
+  .slope{max-width:340px;margin:0 auto;width:100%}
   .tg{grid-template-columns:1fr}
-  .controls .btns{margin-left:0;width:100%}
-  .controls input,.controls select{min-width:0;width:100%}
+
+  /* split-direction key stacks instead of sitting on one line */
+  .splitbar .labels{flex-direction:column;gap:8px}
+
+  /* controls become full-width with comfortable tap targets */
+  .controls{gap:12px}
   .controls label{width:100%}
+  .controls input,.controls select{min-width:0;width:100%;min-height:44px}
+  .controls .btns{margin-left:0;width:100%;gap:10px}
+  .controls .btns button{flex:1;min-height:44px}
+
+  /* keep the row label in view while the codings scroll */
+  .scroller table.data th:first-child,
+  .scroller table.data td:first-child{
+    position:sticky;left:0;z-index:1;background:var(--paper);
+    box-shadow:1px 0 0 var(--rule-2);
+  }
+  .scroller table.data thead th:first-child{z-index:2}
+
+  .tablewrap{max-height:70vh}
+  table.grid{min-width:560px}
+  table.grid th:nth-child(1),table.grid td:nth-child(1){position:sticky;left:0;background:var(--paper);z-index:1}
+  table.grid th:nth-child(2),table.grid td:nth-child(2){
+    position:sticky;left:46px;background:var(--paper);z-index:1;
+    box-shadow:1px 0 0 var(--rule-2);
+  }
+  table.grid thead th:nth-child(1),table.grid thead th:nth-child(2){z-index:3}
+  table.grid tbody tr:hover td:nth-child(1),
+  table.grid tbody tr:hover td:nth-child(2),
+  table.grid tbody tr[aria-selected=true] td:nth-child(1),
+  table.grid tbody tr[aria-selected=true] td:nth-child(2){background:var(--flag)}
+
+  .detail .hd{font-size:19px}
+}
+
+/* ---------- small phone ---------- */
+@media (max-width:400px){
+  .wrap{width:calc(100vw - 24px)}
+  .kicker{font-size:10.5px;letter-spacing:.12em}
+  table.data,table.grid{font-size:12.5px}
+  table.grid th,table.grid td{padding:7px 8px}
+  table.grid th:nth-child(2),table.grid td:nth-child(2){left:40px}
+  .num{width:40px}
+  .mark{width:20px;height:20px}
 }
 @media print{
   body{background:#fff}
   .controls,.tablewrap{display:none}
+  .scroller{overflow:visible;background:none}
+  .scroller table.data,.scroller table.matrix{min-width:0}
   section{break-inside:avoid;border-bottom:1px solid #ccc}
 }
 </style>
@@ -568,6 +642,19 @@ function init(){
   });
   document.getElementById("bCsv").addEventListener("click",downloadCsv);
   renderExplorer();
+  makeScrollable();
+}
+function makeScrollable(){
+  document.querySelectorAll("table.data, table.matrix").forEach(t=>{
+    if(t.parentElement && t.parentElement.classList.contains("scroller")) return;
+    const box = document.createElement("div");
+    box.className = "scroller";
+    box.setAttribute("tabindex","0");
+    box.setAttribute("role","region");
+    box.setAttribute("aria-label","Scrollable table");
+    t.parentNode.insertBefore(box, t);
+    box.appendChild(t);
+  });
 }
 init();
 </script>
