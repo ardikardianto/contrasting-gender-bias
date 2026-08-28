@@ -207,6 +207,43 @@ footer li,footer{overflow-wrap:anywhere}
   .scroller table.data td:not(:first-child){white-space:nowrap}
   .scroller table.data thead th:first-child{z-index:2}
 
+  /* section 04 rate tables are too dense for horizontal table layout on phones */
+  .scroller.lens-rate-wrap{
+    overflow-x:visible;background:none;
+  }
+  .scroller table.data.lens-rate{
+    min-width:0;width:100%;display:block;
+  }
+  .scroller table.data.lens-rate thead{display:none}
+  .scroller table.data.lens-rate tbody,
+  .scroller table.data.lens-rate tr,
+  .scroller table.data.lens-rate td{display:block;width:100%}
+  .scroller table.data.lens-rate tr{
+    padding:12px 0;border-bottom:1px solid var(--rule);
+  }
+  .scroller table.data.lens-rate td{
+    position:relative!important;left:auto!important;z-index:auto!important;
+    max-width:none;padding:6px 0;border-bottom:0;text-align:left;
+    white-space:normal;overflow-wrap:anywhere;box-shadow:none!important;
+  }
+  .scroller table.data.lens-rate td.rowhead{
+    font-size:14px;margin-bottom:4px;
+  }
+  .scroller table.data.lens-rate td:not(.rowhead){
+    display:block;
+  }
+  .scroller table.data.lens-rate .cell-value{
+    display:block;color:var(--ink);font-weight:650;font-size:14px;line-height:1.25;
+    padding:1px 0 5px;
+  }
+  .scroller table.data.lens-rate td:not(.rowhead)::before{
+    content:attr(data-label);display:block;color:var(--ink-3);font-size:11px;
+    letter-spacing:.07em;text-transform:uppercase;font-weight:700;
+  }
+  .scroller table.data.lens-rate .bar-cell .b{
+    left:0;right:auto;bottom:1px;
+  }
+
   .tablewrap{max-height:70vh}
   table.grid{min-width:560px}
   table.grid th:nth-child(1),table.grid td:nth-child(1){position:sticky;left:0;background:var(--paper);z-index:1}
@@ -221,6 +258,7 @@ footer li,footer{overflow-wrap:anywhere}
   table.grid tbody tr[aria-selected=true] td:nth-child(2){background:var(--flag)}
 
   .detail .hd{font-size:19px}
+  h3{overflow-wrap:anywhere;word-break:break-word}
 }
 
 /* ---------- small phone ---------- */
@@ -493,13 +531,14 @@ function renderLens(){
   });
   const rateTable = (cat, colorVar, heading, note) => {
     const rows = classRows(cat);
+    const heads = PLATFORMS.flatMap(p=>PHASES.map(ph=>`${p.split(" ")[0]} ${ph}`));
     let t = `<h3>${heading}</h3>`+
-      `<table class="data"><thead><tr><th>Classification</th><th>Items</th>`+
-      PLATFORMS.flatMap(p=>PHASES.map(ph=>`<th>${esc(p.split(" ")[0])} ${ph}</th>`)).join("")+
+      `<table class="data lens-rate"><thead><tr><th>Classification</th><th>Items</th>`+
+      heads.map(h=>`<th>${esc(h)}</th>`).join("")+
       `</tr></thead><tbody>`;
     for(const r of rows){
-      t += `<tr><td class="rowhead">${esc(clsName(r.cl))}</td><td class="subtle">${r.n}</td>`+
-        r.cells.map(c=>`<td class="bar-cell">${pc1(c.pct)}%<span class="b" style="width:${c.pct}%;background:${colorVar}"></span></td>`).join("")+
+      t += `<tr><td class="rowhead">${esc(clsName(r.cl))}</td><td class="subtle" data-label="Items"><span class="cell-value">${r.n}</span></td>`+
+        r.cells.map((c,i)=>`<td class="bar-cell" data-label="${esc(heads[i])}"><span class="cell-value">${pc1(c.pct)}%</span><span class="b" style="width:${c.pct}%;background:${colorVar}"></span></td>`).join("")+
         `</tr>`;
     }
     t += `</tbody></table>`;
@@ -507,9 +546,9 @@ function renderLens(){
     return {html:t, rows};
   };
 
-  const masc = rateTable("Masculine","var(--masc)","Masculine renderings as a share of each classification",
+  const masc = rateTable("Masculine","var(--masc)","Masculine renderings",
     "A platform that simply defaulted to the masculine would show a flat line across all three rows.");
-  const fem  = rateTable("Feminine","var(--fem)","Feminine renderings as a share of each classification",
+  const fem  = rateTable("Feminine","var(--fem)","Feminine renderings",
     "A platform genuinely tracking the classification would concentrate its feminine output in the top row alone.");
 
   let html = masc.html + `<div style="height:38px"></div>` + fem.html;
@@ -656,6 +695,7 @@ function makeScrollable(){
     box.setAttribute("tabindex","0");
     box.setAttribute("role","region");
     box.setAttribute("aria-label","Scrollable table");
+    if(t.classList.contains("lens-rate")) box.classList.add("lens-rate-wrap");
     t.parentNode.insertBefore(box, t);
     box.appendChild(t);
   });
