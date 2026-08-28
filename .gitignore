@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Excel lock files
+~$*
+
+# local working backups
+.bak/
+
+# python
+__pycache__/
+*.pyc
