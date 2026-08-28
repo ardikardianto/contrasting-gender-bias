@@ -151,7 +151,8 @@ footer b{color:var(--ink-2);font-weight:650}
     radial-gradient(farthest-side at 0 50%,rgba(22,19,15,.13),rgba(22,19,15,0)) left center/9px 100% no-repeat scroll,
     radial-gradient(farthest-side at 100% 50%,rgba(22,19,15,.13),rgba(22,19,15,0)) right center/9px 100% no-repeat scroll;
 }
-.scroller table.data{min-width:640px}
+.scroller table.data{min-width:min(640px,100%)}
+.scroller table.data.narrow-cols{min-width:0}
 .scroller table.matrix{min-width:420px}
 html,body{max-width:100%;overflow-x:hidden}
 footer li,footer{overflow-wrap:anywhere}
@@ -200,7 +201,10 @@ footer li,footer{overflow-wrap:anywhere}
   .scroller table.data td:first-child{
     position:sticky;left:0;z-index:1;background:var(--paper);
     box-shadow:1px 0 0 var(--rule-2);
+    max-width:40vw;white-space:normal;overflow-wrap:anywhere;
   }
+  .scroller table.data th:not(:first-child),
+  .scroller table.data td:not(:first-child){white-space:nowrap}
   .scroller table.data thead th:first-child{z-index:2}
 
   .tablewrap{max-height:70vh}
@@ -526,7 +530,7 @@ function renderLens(){
     ["Split-gender on at least one platform", any("2023","Split-gender"), any("2026","Split-gender")]
   ];
   html += `<div style="height:44px"></div><h3>Cross-platform agreement</h3>`+
-    `<table class="data" style="max-width:760px"><thead><tr><th>Measure</th><th>2023</th><th>2026</th><th>Change</th></tr></thead><tbody>`;
+    `<table class="data narrow-cols" style="max-width:760px"><thead><tr><th>Measure</th><th>2023</th><th>2026</th><th>Change</th></tr></thead><tbody>`;
   for(const [label, v23, v26] of measures){
     const d = v26 - v23;
     html += `<tr><td class="rowhead">${esc(label)}</td>`+
