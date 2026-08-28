@@ -85,6 +85,7 @@ table.data thead th{font-size:11px;letter-spacing:.07em;text-transform:uppercase
 table.data tbody tr:last-child td{border-bottom:1px solid var(--rule)}
 table.data .rowhead{font-weight:600}
 .bar-cell{position:relative}
+.p-short{display:none}
 .bar-cell .b{position:absolute;left:0;bottom:3px;height:3px;background:var(--masc);opacity:.5}
 .subtle{color:var(--ink-3)}
 
@@ -208,41 +209,35 @@ footer li,footer{overflow-wrap:anywhere}
   .scroller table.data thead th:first-child{z-index:2}
 
   /* section 04 rate tables are too dense for horizontal table layout on phones */
-  .scroller.lens-rate-wrap{
-    overflow-x:visible;background:none;
-  }
+  /* Rate tables keep the desktop structure — every column, real header row —
+     and compress to fit the viewport instead of scrolling or stacking. */
+  .scroller.lens-rate-wrap{overflow-x:visible;background:none}
   .scroller table.data.lens-rate{
-    min-width:0;width:100%;display:block;
+    min-width:0;width:100%;table-layout:fixed;font-size:10.5px;
   }
-  .scroller table.data.lens-rate thead{display:none}
-  .scroller table.data.lens-rate tbody,
-  .scroller table.data.lens-rate tr,
-  .scroller table.data.lens-rate td{display:block;width:100%}
-  .scroller table.data.lens-rate tr{
-    padding:12px 0;border-bottom:1px solid var(--rule);
-  }
+  .scroller table.data.lens-rate th,
   .scroller table.data.lens-rate td{
-    position:relative!important;left:auto!important;z-index:auto!important;
-    max-width:none;padding:6px 0;border-bottom:0;text-align:left;
-    white-space:normal;overflow-wrap:anywhere;box-shadow:none!important;
+    padding:7px 1px;white-space:normal;text-align:right;
+    position:static;left:auto;z-index:auto;max-width:none;box-shadow:none;
   }
-  .scroller table.data.lens-rate td.rowhead{
-    font-size:14px;margin-bottom:4px;
+  /* header: platform on one line, year beneath, so columns stay narrow */
+  .scroller table.data.lens-rate thead th{
+    font-size:9.5px;letter-spacing:.01em;line-height:1.3;word-spacing:100vw;
+    padding-bottom:6px;
   }
-  .scroller table.data.lens-rate td:not(.rowhead){
-    display:block;
+  .scroller table.data.lens-rate th:first-child,
+  .scroller table.data.lens-rate td:first-child{
+    width:22%;text-align:left;padding-left:0;font-size:10px;line-height:1.3;
+    overflow-wrap:anywhere;word-spacing:normal;
   }
-  .scroller table.data.lens-rate .cell-value{
-    display:block;color:var(--ink);font-weight:650;font-size:14px;line-height:1.25;
-    padding:1px 0 5px;
-  }
-  .scroller table.data.lens-rate td:not(.rowhead)::before{
-    content:attr(data-label);display:block;color:var(--ink-3);font-size:11px;
-    letter-spacing:.07em;text-transform:uppercase;font-weight:700;
-  }
-  .scroller table.data.lens-rate .bar-cell .b{
-    left:0;right:auto;bottom:1px;
-  }
+  .scroller table.data.lens-rate th:nth-child(2),
+  .scroller table.data.lens-rate td:nth-child(2){width:8%;word-spacing:normal}
+  .scroller table.data.lens-rate .cell-value{display:inline}
+  .scroller table.data.lens-rate .p-full{display:none}
+  .scroller table.data.lens-rate .p-short{display:inline}
+  .scroller table.data.lens-rate td:not(.rowhead)::before{content:none}
+  .scroller table.data.lens-rate .bar-cell .b{left:1px;bottom:2px;height:2px}
+
 
   .tablewrap{max-height:70vh}
   table.grid{min-width:560px}
@@ -265,7 +260,12 @@ footer li,footer{overflow-wrap:anywhere}
 @media (max-width:400px){
   .wrap{width:calc(100vw - 24px)}
   .kicker{font-size:10.5px;letter-spacing:.12em}
-  table.data,table.grid{font-size:12.5px}
+  table.grid{font-size:12.5px}
+  .scroller table.data.lens-rate{font-size:10px}
+  .scroller table.data.lens-rate th,.scroller table.data.lens-rate td{padding:5px 1px}
+  .scroller table.data.lens-rate thead th{font-size:9px}
+  .scroller table.data.lens-rate th:first-child,
+  .scroller table.data.lens-rate td:first-child{width:23%;font-size:9.5px}
   table.grid th,table.grid td{padding:7px 8px}
   table.grid th:nth-child(2),table.grid td:nth-child(2){left:40px}
   .num{width:40px}
@@ -538,7 +538,7 @@ function renderLens(){
       `</tr></thead><tbody>`;
     for(const r of rows){
       t += `<tr><td class="rowhead">${esc(clsName(r.cl))}</td><td class="subtle" data-label="Items"><span class="cell-value">${r.n}</span></td>`+
-        r.cells.map((c,i)=>`<td class="bar-cell" data-label="${esc(heads[i])}"><span class="cell-value">${pc1(c.pct)}%</span><span class="b" style="width:${c.pct}%;background:${colorVar}"></span></td>`).join("")+
+        r.cells.map((c,i)=>`<td class="bar-cell" data-label="${esc(heads[i])}"><span class="cell-value"><span class="p-full">${pc1(c.pct)}%</span><span class="p-short">${Math.round(c.pct)}%</span></span><span class="b" style="width:${c.pct}%;background:${colorVar}"></span></td>`).join("")+
         `</tr>`;
     }
     t += `</tbody></table>`;
