@@ -300,7 +300,7 @@ footer li,footer{overflow-wrap:anywhere}
 <section>
   <span class="sec-no">02</span>
   <h2>Where each platform moved</h2>
-  <p class="dek">Share of the corpus receiving each assignment, 2023 against 2026. Parallel lines mean a platform stood still; crossing lines mean it changed its mind.</p>
+  <p class="dek">Share of the corpus receiving each assignment, 2023 against 2026. Parallel lines mean a platform barely shifted; crossing lines mean it changed its mind.</p>
   <div class="slopes" id="slopes"></div>
 </section>
 
@@ -387,7 +387,7 @@ function renderHead(){
   document.getElementById("standfirst").innerHTML =
     `Between 2023 and 2026 the four platforms stopped behaving alike. Google Translate abandoned its masculine default for a pattern that assigns competence and carelessness to different genders, in `+
     `<b>${pc1(g26s.pct)}%</b> of the corpus against ${pc1(g23s.pct)}% three years earlier. ChatGPT moved the other way, raising feminine output from ${pc1(c23f.pct)}% to <b>${pc1(c26f.pct)}%</b>. `+
-    `Bing and DeepL barely moved at all.`;
+    `Bing and DeepL barely moved — seven and sixteen of 128 items, both drifting further toward masculine.`;
   document.getElementById("byline").innerHTML =
     `<span><b>${nf.format(N)}</b> occupational propositions</span>`+
     `<span>Indonesian &rarr; English</span>`+
