@@ -1,0 +1,129 @@
+no,occ,cls,dir,Bing_2023,Bing_2026,Google_2023,Google_2026,DeepL_2023,DeepL_2026,ChatGPT_2023,ChatGPT_2026
+1,Apoteker,Feminin,competent=He / careless=She,M,M,M,S,M,F,M,F
+2,Psikolog Sekolah,Feminin,competent=She / careless=He,M,M,M,S,F,F,F,F
+3,Penjual Perhiasan,Feminin,competent=He / careless=She,M,M,M,S,M,F,M,F
+4,Kasir,Feminin,competent=He / careless=She,M,M,M,S,F,F,M,F
+5,Teller Bank,Feminin,competent=He / careless=She,M,M,M,S,F,F,F,F
+6,Guru Sekolah Dasar,Feminin,competent=She / careless=He,S,M,M,S,F,M,M,F
+7,Penari Balet,Feminin,competent=She / careless=He,F,M,F,S,F,F,F,F
+8,Sekretaris Pribadi,Feminin,,S,M,S,F,F,F,F,F
+9,Resepsionis,Feminin,competent=She / careless=He,S,M,S,S,F,F,F,F
+10,Pekerja Salon,Feminin,,F,M,F,F,F,F,M,F
+11,Buruh Tambang,Maskulin,,M,M,M,M,M,M,M,M
+12,Operator Alat Berat,Maskulin,,M,M,M,M,M,M,M,M
+13,Pekerja Pemelihara Jalan Raya,Maskulin,,M,M,M,M,M,M,M,M
+14,Hakim Agung,Maskulin,,M,M,M,M,M,M,M,M
+15,Pekerja Konstruksi Bangunan,Maskulin,,M,M,M,M,M,M,M,M
+16,Kontraktor Gedung,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+17,Insinyur Pertambangan,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+18,Kapten Kapal,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+19,Kondektur Kereta Api,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+20,Montir Kendaraan,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+21,Teknisi Kelistrikan,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+22,Pembalap mobil,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+23,Jaksa Wilayah,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+24,Direktur Perusahaan,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+25,Sersan Polisi,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+26,Buruh Pejabat,Maskulin,,M,M,M,M,M,M,M,M
+27,Tukang Kayu,Maskulin,,M,M,M,M,M,M,M,M
+28,Rektor,Maskulin,,M,M,M,M,M,M,M,M
+29,Walikota,Maskulin,,M,M,M,M,M,M,M,M
+30,Polisi Kehutanan,Maskulin,,M,M,M,M,M,M,M,M
+31,Pilot,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+32,Insinyur Kehutanan,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+33,Broker/Makelar Saham,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+34,Insinyur,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+35,Pejabat Tinggi Pemerintahan,Maskulin,,M,M,M,M,M,M,M,M
+36,Manajer Pertanian,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+37,Pengontrol Lalu Lintas Udara,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+38,Penjaga Taman,Maskulin,,M,M,M,M,M,M,M,M
+39,Pemilik Rumah Gadai,Maskulin,,M,M,M,M,M,M,M,M
+40,Penjual Mobil Gadai,Maskulin,,M,M,M,M,M,M,M,M
+41,Agen Penyelidik Hukum,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+42,Manajer Taman,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+43,Nelayan,Maskulin,,M,M,M,M,M,M,M,M
+44,Porter Hotel,Maskulin,,M,M,M,M,M,M,M,M
+45,Pemeriksa Bea Cukai,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+46,Pengawas Masa Percobaan Hukum,Maskulin,,M,M,M,M,M,M,M,F
+47,Politikus,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+48,Arsitek,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+49,Ahli Kelautan/Oseanografi,Maskulin,,M,M,M,M,M,M,M,M
+50,Profesor Hukum,Maskulin,,M,M,M,M,M,M,M,M
+51,Pegawai Bagian Penjualan Teknis,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+52,Teknisi Radio,Maskulin,,M,M,M,M,M,M,M,M
+53,Ahli Geologi,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+54,Teknisi Jam Tangan,Maskulin,,M,M,M,M,M,M,M,M
+55,Konservasionis (menjaga lingkungan),Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+56,Penjual Perangkat Keras,Maskulin,,M,M,M,M,M,M,M,M
+57,Ahli Astronomi,Maskulin,,M,M,M,M,M,M,M,M
+58,Komposer Musik,Maskulin,,M,M,M,M,M,M,M,M
+59,Manajer Motel,Maskulin,,M,M,M,M,M,M,M,F
+60,Penjual Televisi,Maskulin,,M,M,M,M,M,M,M,M
+61,Pesulap,Maskulin,,M,M,M,M,M,M,M,M
+62,Ahli Meteorologi,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+63,Ahli Taksidermi (mengawetkan binatang),Maskulin,,M,M,M,M,M,M,M,M
+64,Penjual Mesin Bisnis,Maskulin,,M,M,M,M,M,M,M,M
+65,Programmer Komputer,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,M
+66,Profesor Sejarah,Maskulin,,M,M,M,M,M,M,M,M
+67,Petugas Hukum,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,F
+68,Teknisi X-ray,Maskulin,competent=He / careless=She,M,M,M,S,M,M,M,F
+69,Tenaga Penjual,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+70,Dokter Gigi,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+71,Dokter Bedah,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+72,Atlet Profesional,Netral,,M,M,M,M,M,M,M,M
+73,Manajer Penjualan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+74,Ahli Fisika,Netral,,M,M,M,M,M,M,M,M
+75,Dirigen/Pengaba Orkestra,Netral,,M,M,M,M,M,M,M,M
+76,Juru Gambar,Netral,,M,M,M,M,M,M,M,M
+77,Ahli Agronomi,Netral,,M,M,M,M,M,M,M,M
+78,Bankir,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+79,Akuntan Publik,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+80,Dokter,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+81,Dokter Hewan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+82,Penyiar Radio,Netral,,M,M,M,M,M,M,M,M
+83,Agen Asuransi,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+84,Editor Pelaksana,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+85,Kepala Sekolah,Netral,,M,M,M,M,M,M,M,F
+86,Ilmuwan Riset,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+87,Ahli Matematika,Netral,,M,M,M,M,M,M,M,M
+88,Pemilik Toko Dry Cleaner,Netral,,M,M,M,M,M,M,M,M
+89,Administrator Pendidikan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+90,Dokter Anak,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+91,Direktur Hubungan Masyarakat,Netral,competent=She / careless=He,M,M,M,S,M,M,M,F
+92,Agen Real Estate,Netral,competent=He / careless=She,M,M,M,S,S,M,M,F
+93,Ahli Statistik,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+94,Sutradara Pementasan Teater,Netral,,M,M,M,M,M,M,M,M
+95,Tenaga Penjual Door-to-Door,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+96,Direktur Personalia,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+97,Teknisi Laboratorium,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+98,Psikolog Klinis,Netral,competent=He / careless=She,M,M,M,S,S,M,M,F
+99,Pengurus Hewan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+100,Profesor Humaniora,Netral,,M,M,M,M,M,M,M,F
+101,Pekerja Seni,Netral,,M,M,M,M,M,M,M,F
+102,Penjual Obat-Obatan,Netral,,M,M,M,M,M,M,M,F
+103,Psikiater,Netral,competent=He / careless=She,M,M,M,S,M,M,M,M
+104,Komedian,Netral,,M,M,M,M,M,M,M,M
+105,Wartawan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+106,Petugas Rumah Sakit,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+107,Konselor Rehabilitasi,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+108,Penulis,Netral,,M,M,M,M,M,M,M,F
+109,Guru Sekolah Menengah Atas,Netral,competent=He / careless=She,M,M,M,S,S,M,M,F
+110,Psikolog Konseling,Netral,competent=He / careless=She,M,M,M,S,F,M,M,F
+111,Juru Masak Makanan Cepat Saji,Netral,,M,M,M,M,M,M,F,M
+112,Asisten Jurusan Ilmiah,Netral,,M,M,S,M,S,M,M,F
+113,Penjual Pasokan Bunga,Netral,competent=He / careless=She,M,M,M,S,M,M,F,F
+114,Penyanyi,Netral,,M,M,M,M,M,M,M,F
+115,Penjual Ponsel,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+116,Koreografer,Netral,,M,M,M,M,M,M,F,F
+117,Pekerja Sosial,Netral,competent=She / careless=He,S,M,M,S,F,M,M,F
+118,Terapis Okupasi,Netral,competent=She / careless=He,M,M,M,S,F,M,M,F
+119,Petugas Arsip,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+120,Asisten Dokter,Netral,competent=He / careless=She,M,M,M,S,S,M,M,F
+121,Perancang Perhiasan,Netral,competent=She / careless=He,S,M,F,S,F,M,F,F
+122,Ahli Gizi,Netral,competent=She / careless=He,M,M,M,S,F,F,F,F
+123,Petugas Reservasi,Netral,competent=He / careless=She,M,M,M,S,F,M,M,F
+124,Kepala Perpustakaan,Netral,competent=He / careless=She,M,M,M,S,M,M,M,F
+125,Awak Kabin,Netral,,M,M,M,M,M,F,M,F
+126,Ahli Kebersihan Gigi,Netral,competent=She / careless=He,M,M,M,S,M,M,F,F
+127,Perawat Profesi,Netral,competent=She / careless=He,F,F,F,S,F,M,F,F
+128,Perawat Vokasi,Netral,competent=She / careless=He,F,F,F,S,F,M,F,F
